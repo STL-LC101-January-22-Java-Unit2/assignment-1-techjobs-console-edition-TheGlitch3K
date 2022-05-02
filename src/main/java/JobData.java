@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -97,10 +94,25 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        //create a new (public static) method that will search for a string within each of the columns. Name it findByValue.
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for(HashMap<String, String> theList : allJobs){
+
+            for(String input : theList.keySet()){
+                if(theList.get(input).toLowerCase().contains(value.toLowerCase())){
+                    jobs.add(theList);
+                    break;
+                }
+            }
+        }
 
         // TODO - implement this method
-        return null;
+        return jobs;
     }
+
+    // create a function that
 
     /**
      * Read in data from a CSV file and store it in a list
