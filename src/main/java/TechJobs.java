@@ -132,7 +132,7 @@ public class TechJobs {
                 for (Map.Entry<String, String> table : someJobs.get(i).entrySet()) {
                     String key = table.getKey();
                     Object value = table.getValue();
-                    System.out.println(key + ": " + value + ".");
+                    System.out.println(key + ": " + value +);
 
 
 
